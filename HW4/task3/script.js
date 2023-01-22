@@ -4,34 +4,29 @@
 // 2. Найти минимальное число
 // 3. Найти есть ли в этом массиве число 3
 
-const arrayRandom = (b) => {
-    for (let i = 0; i < b; i++) {
-        arrRandom[i] = Math.floor(Math.random() * 10);
+const randomArr = new Array(5);
+let elemSum = 0;
+let findElem = 3;
+for (let i = 0; i < randomArr.length; i++) {
+    randomArr[i] = Math.floor(Math.random() * 10);
+    elemSum += randomArr[i];
+}
+alert(randomArr);
+alert(`Сумма элементов массива ${elemSum}`);
+let minElem = randomArr[0];
+for (let i = 0; i < randomArr.length; i++) {
+    if (minElem > randomArr[i]) {
+        minElem = randomArr[i];
     }
 }
-
-function findNumber(arrRandom, elem) {
-    for (let i = 0; i < arr.length; i++) {
-        if (arrRandom[i] === elem) {
-            return alert(`В этом массиве есть цифра ${elem}`);
-        }
+alert(`Минимальное число массива ${minElem}`);
+for (let i = 0; i < randomArr.length; i++) {
+    if (findElem === randomArr[i]) {
+        findElem = true;
     }
-    return alert(`В этом массиве нет цифры ${elem}`);
 }
-
-const arrRandom = [];
-arrayRandom(5);
-alert(arrRandom);
-let sum = 0;
-let min = arrRandom[0];
-let elemFind = 3;
-for (let i = 0; i < arrRandom.length; i++) {
-    const element = arrRandom[i];
-    if (element < min) {
-        min = element;
-    }
-    sum += element;
+if (findElem === true) {
+    alert('В данном массиве есть число 3');
+} else {
+    alert('В данном массиве нет числа 3');
 }
-alert(`Сумма всех элементов массива = ${sum}`);
-alert(`Минимальное число массива = ${min}`);
-findNumber(arrRandom, elemFind);
