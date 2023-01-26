@@ -1,18 +1,22 @@
-// Необязательное задание.
-// Необходимо вывести горку в консоль (используя цикл for), как показано на
-// рисунке, только у вашей горки должно быть 20 рядов, а не 5:
+// Дан массив products, необходимо цену каждого продукта уменьшить на 15% используя
+// метод forEach.
 
-// x
-// xx
-// xxx
-// xxxx
-// xxxxx
+const products = [{
+        id: 3,
+        price: 200,
+    },
+    {
+        id: 4,
+        price: 900,
+    },
+    {
+        id: 1,
+        price: 1000,
+    },
+];
 
-for (let i = 0; i < 20; i++) {
-    let x = '';
-    for (var j = 0; j <= i; j++) {
-        x += 'x';
-    }
-    alert(x);
-    console.log(x);
-}
+products.forEach(product => {
+    product.price *= 0.85;
+});
+console.log(products);
+alert(products);
