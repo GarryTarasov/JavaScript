@@ -19,4 +19,3 @@ products.forEach(product => {
     product.price *= 0.85;
 });
 console.log(products);
-alert(products);

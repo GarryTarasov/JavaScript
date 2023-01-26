@@ -5,26 +5,23 @@
 
 const riddles = {
     question: 'Висит груша - нельзя скушать. что это ?',
-    answer: 'Лампочка',
-    hints: [
-        'спасает от темноты',
-        'у каждой из этих груш есть по патрону'
-    ],
+    answer: 'лампочка',
+    hints: ['в 90-е годы их часто тырили в подъездах. Наверняка соседи.', 'у каждой из этих груш есть по патрону. А что поделать, лихие 90-е же'],
     askQuestion() {
         if (prompt(this.question).toLowerCase() !== riddles.answer) {
             alert(this.hints[0]);
         } else {
-            return alert('Молодец');
+            return alert('прикинь это и правда лампочка. а я всегда думал, что это боксерская груша');
         }
         if (prompt(this.question).toLowerCase() !== riddles.answer) {
             alert(this.hints[1]);
         } else {
-            return alert('Молодец');
+            return alert('прикинь это и правда лампочка. а я всегда думал, что это елочная игрушка');
         }
         if (prompt(this.question).toLowerCase() !== riddles.answer) {
-            alert('Вы проиграли');
+            alert('Ну е-маё! Да это лампочка же. Каждый ребёнок знает это. Иди учись-ты не отгадал.');
         } else {
-            return alert('Молодец');
+            return alert('прикинь это и правда лампочка. а я всегда думал, что это гнилая груша');
         }
     }
 }

@@ -29,8 +29,7 @@ const products = [{
 
 const productsPhoto = products.filter(product => product.photos >= '.jpg');
 console.log(productsPhoto);
-alert(productsPhoto);
+
 
 products.sort((min, max) => min.price - max.price);
 console.log(products);
-alert(products);
