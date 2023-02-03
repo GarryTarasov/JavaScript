@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW8_Task...</title>
+    <style>
+        .li_bcg {
+            background-color: blues;
+        }
+    </style>
+</head>
+
+<body>
+    <p class="super_element">Привет</p>
+
+    <img src="https://placeimg.com/50/50/animals" alt="">
+    <img src="https://placeimg.com/50/50/arch" alt="">
+    <img src="https://placeimg.com/50/50/nature" alt="">
+    <img src="https://placeimg.com/50/50/people" alt="">
+    <img src="https://placeimg.com/50/50/tech" alt="">
+    <img src="https://placeimg.com/50/50/tech/grayscale" alt="">
+    <img src="https://placeimg.com/50/50/tech/sepia" alt="">
+
+    <br>
+
+    <button>Кнопка</button>
+    <button class="super_element">Кнопка с классом btn</button>
+    <button>Кнопка</button>
+
+    <br>
+
+    <textarea></textarea>
+
+    <br>
+
+    <ul>
+        <li>
+            <button>Кнопка 1</button>
+        </li>
+        <li>
+            <button>Кнопка 2</button>
+        </li>
+        <li>
+            <button>Кнопка 3</button>
+        </li>
+        <li>
+            <button>Кнопка 4</button>
+        </li>
+    </ul>
+    <script>
+        "use strict";
+        // 1. Необходимо вывести сообщение в консоль "все теги прогрузились", когда все теги будут созданы браузером.
+        document.addEventListener('DOMContentLoaded', function (e) {
+            console.log('Все теги прогрузились');
+        });
+
+        // 2. Необходимо вывести сообщение в консоль "страница загрузилась", когда все ресурсы страницы будут загружены.
+        window.addEventListener('load', function (e) {
+            console.log('Страница загрузилась');
+        });
+
+        // 3. При клике на какой - либо тег на странице в консоль должно выводиться сообщение наподобие:
+        // - Класс "super_element" присутствует в элементе "div".
+        // - сообщение должно определять присутствует или отсутствует класс "super_element"
+        // у элемента, а также выводить в нижнем регистре верный тег в данной строке, по
+        // которому был совершен клик. Необходимо использовать делегирование.
+        const body = document.querySelector('body');
+        body.addEventListener('click', function (e) {
+            let target = e.target;
+            (target.classList.contains('super_element')) ? console.log(`Класс "super_element" присутствует в элементе "${target.tagName.toLowerCase()}"`) : console.log(`Класс "super_element" отсутствует в элементе "${target.tagName.toLowerCase()}"`);
+        });
+
+        // 4. Сделайте, чтобы при наведении на textarea в консоли появлялось сообщение: "Вы навели на textarea."
+        const textEl = document.querySelector('textarea');
+        textEl.addEventListener('mouseover', function (e) {
+            console.log('Вы навели на textarea.');
+        });
+
+        // 5. Необходимо повесить событие клика на тег ul.В обработчике события в консоль необходимо выводить текст, который записан внутри элемента кнопки, по которой был произведен клик.Если клик был не по кнопке, то ничего выводить не нужно.Необходимо использовать делегирование.
+        const ulEl = document.querySelector('ul');
+        const ulButEls = ulEl.querySelectorAll('button');
+        for (let i = 0; i < ulButEls.length; i++) {
+            const element = ulButEls[i];
+            ulEl.addEventListener('click', function (e) {
+                let target = e.target;
+                if (target == element) {
+                    console.log(target.textContent);
+                }
+            });
+        };
+
+
+        // 6. Вопрос: Почему в console.log пишется сначала текст из 5 задания и только потом выводится текст из 3 задания, если мы кликаем по кнопкам в ul? Ответ необходимо написать здесь же, под этим комментарием, своими словами.
+        // В пятом задании мы кликаем на один из блоков, т.е. выводим текст внутри элемента кнопки - т.н. целевая фаза. В третьем задании мы кликаем на тег и в "нём" ищем соответствующий класс - т.н. фаза всплытия.
+
+
+
+        // 7. С помощью JS необходимо изменить цвет заднего фона каждого второго тега li.
+        // const liEls = document.querySelectorAll('li');
+        // for (let i = 1; i < liEls.length; i += 2) {
+        //     const element = liEls[i];
+        //     element.style.backgroundColor = 'yellow';
+        // }
+
+        // 7.1 Вариант изменения фона при нажатии
+        const liEls = document.querySelectorAll('li');
+        for (let i = 1; i < liEls.length; i += 2) {
+            const element = liEls[i];
+            element.addEventListener('click', function (e) {
+                element.style.backgroundColor = 'yellow';
+            });
+        }
+    </script>
+</body>
+
+</html>
