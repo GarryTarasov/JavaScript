@@ -1,0 +1,34 @@
+.player {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 5px solid rgb(4, 18, 65);
+    background-color: rgb(4, 18, 65);
+}
+
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.fa-play:hover {
+    color: #3a7999;
+}
+
+.fa-pause:hover {
+    color: #3a7999;
+}
+
+.time-range {
+    color: aliceblue;
+    font-size: large;
+    padding: 15px;
+}
